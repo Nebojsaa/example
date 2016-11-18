@@ -12,25 +12,6 @@ use Cloud\Model\Entity\MediaObject;
  */
 class UsersController extends AppController
 {
-    public static $allowedActions = [
-        'index' => [
-            'roles' => ['admin', 'master'],
-            'products' => ['CXEE1502-de', 'CXPE1502-de', 'CXTE1502-de', 'CXBE1502-de']
-        ],
-        'login' => [
-            'roles' => ['guest'],
-            'products' => ['CXEE1502-de', 'CXPE1502-de', 'CXTE1502-de', 'CXBE1502-de']
-        ],
-        'logout' => [
-            'roles' => ['admin', 'master', 'regular', 'readonly'],
-            'products' => ['CXEE1502-de', 'CXPE1502-de', 'CXTE1502-de', 'CXBE1502-de']
-        ],
-        'edit' => [
-            'roles' => ['admin', 'master', 'regular', 'readonly'],
-            'products' => ['CXEE1502-de', 'CXPE1502-de', 'CXTE1502-de', 'CXBE1502-de']
-        ]
-    ];
-
     public static function _isAuthorized($user, $request, $action = null)
     {
         // login-Action is only for not logged in users
